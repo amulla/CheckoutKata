@@ -50,5 +50,20 @@ namespace CheckoutKata.Test
             //Assert
             Assert.IsInstanceOfType(basket, typeof(IBasket));
         }
+
+        [TestMethod]
+        public void Add_Ax1_To_Basket_And_Verify_Basket_Contents()
+        {
+            //Arrange
+            var basket = new Basket();
+            var item = "A";
+
+            //Act
+            basket.AddItem(item);
+            var qty = basket.GetQuantity(item);
+
+            //Assert
+            Assert.AreEqual(1, qty);
+        }
     }
 }
