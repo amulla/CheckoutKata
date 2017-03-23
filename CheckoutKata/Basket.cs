@@ -8,19 +8,28 @@ namespace CheckoutKata
 {
     public class Basket : IBasket
     {
+        private Dictionary<string, int> Items;
 
         public Basket()
         {
+            Items = new Dictionary<string, int>();
         }
 
         public void AddItem(string item)
         {
-            // Not sure how to implement this yet
+            if (Items.ContainsKey(item))
+            {
+                Items[item] += 1;
+            }
+            else
+            {
+                Items.Add(item, 1);
+            }
         }
 
         public int GetQuantity(string item)
         {
-            return 1;
+            return Items[item];
         }
     }
 }
