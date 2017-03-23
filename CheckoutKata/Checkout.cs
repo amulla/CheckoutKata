@@ -8,14 +8,22 @@ namespace CheckoutKata
 {
     public class Checkout : ICheckout
     {
+        private int totalPrice;
+
+        public Checkout()
+        {
+            totalPrice = 0;
+        }
+
         public void Scan(string item)
         {
-
+            totalPrice += 50;
         }
 
         public int GetTotalPrice()
         {
-            return 50;
+            return totalPrice;
         }
     }
 }
+
