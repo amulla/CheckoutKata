@@ -25,16 +25,18 @@ namespace CheckoutKata
 
         public int GetPrice(string item, int quantity)
         {
-            Price price = prices.Find(p => p.item == item && p.quantity == quantity);
+            int priceFor1 = prices.Find(p => p.item == item && p.quantity == 1).price;
 
-            if (price != null)
+            for (int i = quantity; i >=1; i--)
             {
-                return price.price;
+                Price price = prices.Find(p => p.item == item && p.quantity == i);
+                if (price != null)
+                {
+                    return price.price + (priceFor1 * (quantity- i));
+                }
             }
-            else
-            {
-                return prices.Find(p => p.item == item && p.quantity == 1).price * quantity;
-            }
+
+            return priceFor1;
         }
     }
 }
