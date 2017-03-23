@@ -9,12 +9,14 @@ namespace CheckoutKata.Test
     {
         private IBasket basket;
         private ICheckout checkout;
+        private IPriceList standardPriceList;
 
         [TestInitialize]
         public void TestInitialize()
         {
             basket = new Basket();
-            checkout = new Checkout(basket);
+            standardPriceList = new StandardPriceList();
+            checkout = new Checkout(basket, standardPriceList);
         }
 
         
