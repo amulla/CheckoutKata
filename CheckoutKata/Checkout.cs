@@ -9,15 +9,17 @@ namespace CheckoutKata
     public class Checkout : ICheckout
     {
         private int totalPrice;
+        private IBasket basket;
 
-        public Checkout()
+        public Checkout(IBasket _basket)
         {
             totalPrice = 0;
+            basket = _basket;
         }
 
         public void Scan(string item)
         {
-            totalPrice += 50;
+            basket.AddItem(item);
         }
 
         public int GetTotalPrice()
