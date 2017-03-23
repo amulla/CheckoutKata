@@ -95,7 +95,7 @@ namespace CheckoutKata.Test
         }
 
         [TestMethod]
-        public void Basket_Contains_Ax3_Bx2_Cx1_Dx1_TotalPrice_Is_210()
+        public void Basket_Contains_Ax4_Bx3_Cx1_Dx1_TotalPrice_Is_290()
         {
             //Arrange
             var itemA = "A";
@@ -107,6 +107,8 @@ namespace CheckoutKata.Test
             checkout.Scan(itemA);
             checkout.Scan(itemA);
             checkout.Scan(itemA);
+            checkout.Scan(itemA);
+            checkout.Scan(itemB);
             checkout.Scan(itemB);
             checkout.Scan(itemB);
             checkout.Scan(itemC);
@@ -114,7 +116,7 @@ namespace CheckoutKata.Test
             var totalPrice = checkout.GetTotalPrice();
 
             //Assert
-            Assert.AreEqual(210, totalPrice);
+            Assert.AreEqual(290, totalPrice);
         }
 
         [TestMethod]
