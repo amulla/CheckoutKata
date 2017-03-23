@@ -16,6 +16,9 @@ namespace CheckoutKata
 
             prices.Add(new Price() { item = "A", quantity = 1, price = 50 });
             prices.Add(new Price() { item = "A", quantity = 3, price = 130 });
+            prices.Add(new Price() { item = "B", quantity = 1, price = 30 });
+            prices.Add(new Price() { item = "B", quantity = 2, price = 45 });
+
         }
 
         public int GetPrice(string item, int quantity)
