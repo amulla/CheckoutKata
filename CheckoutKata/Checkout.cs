@@ -24,6 +24,13 @@ namespace CheckoutKata
 
         public int GetTotalPrice()
         {
+            totalPrice = 0;
+
+            foreach (var basketItem in basket.GetBasketItems())
+            {
+                totalPrice += 50;
+            }
+
             return totalPrice;
         }
     }

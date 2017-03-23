@@ -10,5 +10,6 @@ namespace CheckoutKata
     {
         void AddItem(string item);
         int GetQuantity(string item);
+        List<BasketItem> GetBasketItems();
     }
 }

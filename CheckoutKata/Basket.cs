@@ -39,5 +39,10 @@ namespace CheckoutKata
             }
             return quantity;
         }
+
+        public List<BasketItem> GetBasketItems()
+        {
+            return basketItems;
+        }
     }
 }
