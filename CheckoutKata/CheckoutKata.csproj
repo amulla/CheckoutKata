@@ -48,6 +48,7 @@
     <Compile Include="Checkout.cs" />
     <Compile Include="IBasket.cs" />
     <Compile Include="ICheckout.cs" />
+    <Compile Include="IPriceList.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
