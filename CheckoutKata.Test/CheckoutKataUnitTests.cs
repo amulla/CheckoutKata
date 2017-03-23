@@ -66,6 +66,20 @@ namespace CheckoutKata.Test
         }
 
         [TestMethod]
+        public void Basket_Contains_Bx1_TotalPrice_Is_30()
+        {
+            //Arrange
+            var item = "B";
+
+            //Act
+            checkout.Scan(item);
+            var totalPrice = checkout.GetTotalPrice();
+
+            //Assert
+            Assert.AreEqual(30, totalPrice);
+        }
+
+        [TestMethod]
         public void CreateBasket()
         {
             //Arrange
