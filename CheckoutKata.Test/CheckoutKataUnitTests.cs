@@ -14,7 +14,7 @@ namespace CheckoutKata.Test
         public void TestInitialize()
         {
             basket = new Basket();
-            checkout = new Checkout();
+            checkout = new Checkout(basket);
         }
 
         [TestMethod]
