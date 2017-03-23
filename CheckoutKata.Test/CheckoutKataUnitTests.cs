@@ -17,6 +17,7 @@ namespace CheckoutKata.Test
             checkout = new Checkout(basket);
         }
 
+        /*
         [TestMethod]
         public void Basket_Contains_Ax1_TotalPrice_Is_50()
         {
@@ -45,6 +46,7 @@ namespace CheckoutKata.Test
             //Assert
             Assert.AreEqual(100, totalPrice);
         }
+        */
 
         [TestMethod]
         public void CreateBasket()
