@@ -8,28 +8,36 @@ namespace CheckoutKata
 {
     public class Basket : IBasket
     {
-        private Dictionary<string, int> Items;
+        private List<BasketItem> basketItems;
 
         public Basket()
         {
-            Items = new Dictionary<string, int>();
+            basketItems = new List<BasketItem>();
         }
 
         public void AddItem(string item)
         {
-            if (Items.ContainsKey(item))
+            var basketItem = basketItems.FirstOrDefault(b => b.item == item);
+            if (basketItem == null)
             {
-                Items[item] += 1;
+                basketItems.Add(new BasketItem() { item = item, quantity = 1 });
             }
             else
             {
-                Items.Add(item, 1);
+                basketItem.quantity += 1;
             }
         }
 
         public int GetQuantity(string item)
         {
-            return Items[item];
+            int quantity = 0;
+
+            var basketItem = basketItems.FirstOrDefault(b => b.item == item);
+            if (basketItem != null)
+            {
+                quantity = basketItem.quantity;
+            }
+            return quantity;
         }
     }
 }
