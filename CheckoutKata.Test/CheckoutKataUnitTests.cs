@@ -9,8 +9,11 @@ namespace CheckoutKata.Test
 
     {
         [TestMethod]
-        public void TestMethod1()
+        public void Basket_Contains_Ax1_TotalPrice_Is_50()
         {
+            //Arrange
+            var checkout = new Checkout();
+
         }
     }
 }
