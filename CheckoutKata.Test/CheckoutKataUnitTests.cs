@@ -13,7 +13,6 @@ namespace CheckoutKata.Test
         {
             //Arrange
             var checkout = new Checkout();
-
         }
     }
 }
