@@ -18,6 +18,8 @@ namespace CheckoutKata
             prices.Add(new Price() { item = "A", quantity = 3, price = 130 });
             prices.Add(new Price() { item = "B", quantity = 1, price = 30 });
             prices.Add(new Price() { item = "B", quantity = 2, price = 45 });
+            prices.Add(new Price() { item = "C", quantity = 1, price = 20 });
+            prices.Add(new Price() { item = "D", quantity = 1, price = 15 });
 
         }
 
