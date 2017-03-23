@@ -38,5 +38,17 @@ namespace CheckoutKata.Test
             //Assert
             Assert.AreEqual(100, totalPrice);
         }
+
+        [TestMethod]
+        public void CreateBasket()
+        {
+            //Arrange
+            var basket = new Basket();
+
+            //Act
+
+            //Assert
+            Assert.IsInstanceOfType(basket, typeof(IBasket));
+        }
     }
 }
