@@ -13,6 +13,14 @@ namespace CheckoutKata.Test
         {
             //Arrange
             var checkout = new Checkout();
+            var item = "A";
+
+            //Act
+            checkout.Scan(item);
+            var totalPrice = checkout.GetTotalPrice();
+
+            //Assert
+            Assert.AreEqual(50, totalPrice);
         }
     }
 }
