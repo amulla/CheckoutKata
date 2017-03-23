@@ -6,13 +6,21 @@ namespace CheckoutKata.Test
 {
     [TestClass]
     public class CheckoutKataUnitTests
-
     {
+        private IBasket basket;
+        private ICheckout checkout;
+
+        [TestInitialize]
+        public void TestInitialize()
+        {
+            basket = new Basket();
+            checkout = new Checkout();
+        }
+
         [TestMethod]
         public void Basket_Contains_Ax1_TotalPrice_Is_50()
         {
             //Arrange
-            var checkout = new Checkout();
             var item = "A";
 
             //Act
@@ -27,7 +35,6 @@ namespace CheckoutKata.Test
         public void Basket_Contains_Ax2_TotalPrice_Is_100()
         {
             //Arrange
-            var checkout = new Checkout();
             var item = "A";
 
             //Act
