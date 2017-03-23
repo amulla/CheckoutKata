@@ -65,5 +65,21 @@ namespace CheckoutKata.Test
             //Assert
             Assert.AreEqual(1, qty);
         }
+
+        [TestMethod]
+        public void Add_Ax2_To_Basket_And_Verify_Basket_Contents()
+        {
+            //Arrange
+            var basket = new Basket();
+            var item = "A";
+
+            //Act
+            basket.AddItem(item);
+            basket.AddItem(item);
+            var qty = basket.GetQuantity(item);
+
+            //Assert
+            Assert.AreEqual(2, qty);
+        }
     }
 }
