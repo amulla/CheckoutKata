@@ -10,11 +10,13 @@ namespace CheckoutKata
     {
         private int totalPrice;
         private IBasket basket;
+        private IPriceList standardPriceList;
 
-        public Checkout(IBasket _basket)
+        public Checkout(IBasket _basket, IPriceList _standardPriceList)
         {
             totalPrice = 0;
             basket = _basket;
+            standardPriceList = _standardPriceList;
         }
 
         public void Scan(string item)
@@ -28,7 +30,7 @@ namespace CheckoutKata
 
             foreach (var basketItem in basket.GetBasketItems())
             {
-                totalPrice += 50;
+                totalPrice += standardPriceList.GetPrice(basketItem.item, basketItem.quantity);
             }
 
             return totalPrice;
