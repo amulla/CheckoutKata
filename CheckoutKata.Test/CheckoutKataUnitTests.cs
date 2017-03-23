@@ -48,7 +48,22 @@ namespace CheckoutKata.Test
             //Assert
             Assert.AreEqual(100, totalPrice);
         }
-        
+
+        [TestMethod]
+        public void Basket_Contains_Ax3_TotalPrice_Is_130()
+        {
+            //Arrange
+            var item = "A";
+
+            //Act
+            checkout.Scan(item);
+            checkout.Scan(item);
+            checkout.Scan(item);
+            var totalPrice = checkout.GetTotalPrice();
+
+            //Assert
+            Assert.AreEqual(130, totalPrice);
+        }
 
         [TestMethod]
         public void CreateBasket()
