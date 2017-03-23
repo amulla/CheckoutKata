@@ -81,5 +81,46 @@ namespace CheckoutKata.Test
             //Assert
             Assert.AreEqual(2, qty);
         }
+
+        [TestMethod]
+        public void Add_Ax3_Bx1_Cx4_Dx5_To_Basket_And_Verify_Basket_Contents()
+        {
+            //Arrange
+            var basket = new Basket();
+            var itemA = "A";
+            var itemB = "B";
+            var itemC = "C";
+            var itemD = "D";
+
+            //Act
+            basket.AddItem(itemA);
+            basket.AddItem(itemA);
+            basket.AddItem(itemA);
+
+            basket.AddItem(itemB);
+
+            basket.AddItem(itemC);
+            basket.AddItem(itemC);
+            basket.AddItem(itemC);
+            basket.AddItem(itemC);
+
+            basket.AddItem(itemD);
+            basket.AddItem(itemD);
+            basket.AddItem(itemD);
+            basket.AddItem(itemD);
+            basket.AddItem(itemD);
+
+            var qtyA = basket.GetQuantity(itemA);
+            var qtyB = basket.GetQuantity(itemB);
+            var qtyC = basket.GetQuantity(itemC);
+            var qtyD = basket.GetQuantity(itemD);
+
+            //Assert
+            Assert.AreEqual(3, qtyA);
+            Assert.AreEqual(1, qtyB);
+            Assert.AreEqual(4, qtyC);
+            Assert.AreEqual(5, qtyD);
+        }
+
     }
 }
