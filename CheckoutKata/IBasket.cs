@@ -8,5 +8,7 @@ namespace CheckoutKata
 {
     public interface IBasket
     {
+        void AddItem(string item);
+        int GetQuantity(string item);
     }
 }

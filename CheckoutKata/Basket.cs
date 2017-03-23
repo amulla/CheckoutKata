@@ -8,5 +8,19 @@ namespace CheckoutKata
 {
     public class Basket : IBasket
     {
+
+        public Basket()
+        {
+        }
+
+        public void AddItem(string item)
+        {
+            // Not sure how to implement this yet
+        }
+
+        public int GetQuantity(string item)
+        {
+            return 1;
+        }
     }
 }
